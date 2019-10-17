@@ -40,10 +40,6 @@ function browserSync(done){
     done();
 }
 
-// function browserSyncReload(done) {
-//     browsersync.reload();
-//     done();
-// }
 
 function styles(){
     return gulp.src(paths.styles.src)
@@ -93,9 +89,5 @@ function watch() {
 function clean(){
     return del('build/*')
 }
-// gulp.task('watch', watch);
-// gulp.task('scripts', scripts);
-// gulp.task('clean', clean);
-// gulp.task('build', gulp.series(clean, gulp.parallel(styles, scripts, html, images)));
 
  gulp.task('default', gulp.parallel(watch,browserSync,gulp.series(clean, gulp.parallel(styles, scripts, html, images))));
